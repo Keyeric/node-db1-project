@@ -85,8 +85,8 @@ router.delete("/:id", (req, res) => {
   if (id) {
     acc
       .remove(id)
-      .then(() => {
-        res.status(200);
+      .then((noMore) => {
+        res.status(200).json(noMore);
       })
       .catch((err) => {
         res.status(500).json({
